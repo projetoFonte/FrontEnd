@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import "./pages/about/About";
-import "./pages/home/Home";
-import "./pages/login/Login";
-import "./components/statics/footer/Footer";
-import "./components/statics/navbar/Navbar";
+import About from"./pages/about/About";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Footer from './components/statics/footer/Footer';
+import Navbar from './components/statics/navbar/Navbar';
 import "./App.css";
-import { Home } from '@material-ui/icons';
+
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-        <Switch>
-          <div>
-          
-            
-          </div>
-        </Switch>
-      <Footer />  
+  <Router>
+    <Navbar/>
+      <Switch>
+        <div style={{minHeight: '100vh'}}>
+          <Route exact path='/'>
+            <Login/>
+          </Route>
+
+          <Route path='/login'>
+            <Login/>
+          </Route>
+
+          <Route path='/home'>
+            <Home/>
+          </Route>
+
+          <Route path='/about'>
+            <About/>
+          </Route>
+
+        </div>
+      </Switch>
+    <Footer/>
   </Router>
   );
 }
