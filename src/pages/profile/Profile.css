@@ -1,0 +1,38 @@
+.flex
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.cabecario
+{
+    background-color: #A4EBF3;
+}
+
+.avatarSize
+{
+    width: 160px;
+    height: 160px;
+}
+
+.typography
+{
+    font-size: large;
+    color: #F4F9F9;
+    text-align: center;
+    font-weight: bold !important ;
+}
+
+.typographyTitulo
+{
+    font-size: 24px;
+    color: #A4EBF3;
+    text-align: center;
+    font-weight: bold !important ;
+}
+
+.grid
+{
+    display: flex;
+}

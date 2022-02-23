@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import Footer from './components/statics/footer/Footer';
 import Navbar from './components/statics/navbar/Navbar';
 import Register from './pages/register/Register';
+import Profile from './pages/profile/Profile';
 import "./App.css";
 
 
@@ -33,6 +34,10 @@ function App() {
 
           <Route path='/cadastrousuario'>
             <Register/>
+          </Route>
+
+          <Route path='/profile'>
+            <Profile />
           </Route>
 
         </div>
