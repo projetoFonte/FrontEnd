@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from"./pages/about/About";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Footer from './components/statics/footer/Footer';
 import Navbar from './components/statics/navbar/Navbar';
+import Register from './pages/register/Register';
 import "./App.css";
 
 
@@ -29,6 +29,10 @@ function App() {
 
           <Route path='/about'>
             <About/>
+          </Route>
+
+          <Route path='/cadastrousuario'>
+            <Register/>
           </Route>
 
         </div>

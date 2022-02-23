@@ -1,7 +1,7 @@
 import React, {useState, useEffect, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import User from '../../models/User';
-/*import { register } from '../../services/Service';*/
+import { register } from '../../services/Service';
 import { Grid, Box, Typography, Button, TextField} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import './Register.css';
@@ -44,13 +44,13 @@ function Register(){
             ...user,
             [e.target.name]: e.target.value
         })
-
     }
+
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha == user.senha  && user.senha.length >=8){
-        /*register(`/usuarios/cadastrar`, user, setUserResult)*/
-        alert('Usuario cadastrado com sucesso')
+        register(`/usuarios/cadastrar`, user, setUserResult)
+        alert('Usuario cadastrado com sucesso!')
         }else{
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
