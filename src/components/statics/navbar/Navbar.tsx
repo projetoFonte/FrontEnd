@@ -17,8 +17,8 @@ function Navbar() {
                         </Box>
 
                         <Box display="flex" justifyContent='textPrimary'>
-                            <Box mx={2} className='cursor'>
-                                <Link to="/about">
+                            <Box mx={2} className='cursor '>
+                                <Link to="/about" className='text-decorator-none'>
                                     <Typography variant="h6" color="textPrimary">
                                         Sobre nós
                                     </Typography>
@@ -26,9 +26,17 @@ function Navbar() {
                             </Box>
 
                             <Box mx={2} className='cursor'>
-                                <Link to="/home">
+                                <Link to="/home" className='text-decorator-none'>
                                     <Typography variant="h6" color="textPrimary">
                                         Home
+                                    </Typography>
+                                </Link>
+                            </Box>
+
+                            <Box mx={2} className='cursor'>
+                                <Link to="/profile" className='text-decorator-none'>
+                                    <Typography variant="h6" color="textPrimary">
+                                        Perfil
                                     </Typography>
                                 </Link>
                             </Box>

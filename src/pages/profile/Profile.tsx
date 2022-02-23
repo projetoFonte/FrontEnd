@@ -10,9 +10,9 @@ function Profile() {
     <>
       <Grid container className='flex cabecario'>
         <Grid alignItems='center' item xs={4}>
-          <Box paddingX={4} className="flex" >
-            <Box alignContent="center">
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className="avatarSize" />
+          <Box paddingX={4} className='flex' >
+            <Box alignContent='center'>
+              <Avatar alt='Remy Sharp' src="/static/images/avatar/1.jpg" className='avatarSize' />
               <Typography className='typography'>
                 Nome do Usuário
               </Typography>
