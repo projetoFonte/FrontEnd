@@ -1,11 +1,9 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {Typography, Box, Grid } from '@material-ui/core';
-import StorageIcon from '@mui/icons-material/Storage';
+import WebIcon from '@material-ui/icons/Web';
 import EmailIcon from '@mui/icons-material/Email';
+import {Typography, Box, Grid } from '@material-ui/core';
+
 
 function Footer() {
     return (
@@ -17,14 +15,14 @@ function Footer() {
                             <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>Siga-nos nas redes sociais e contate-nos! </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://github.com/projetoFonte" target="_blank">
-                                <GitHubIcon style={{ fontSize: 60, color: "black" }} />
+                            <a href=" https://projetofonte.herokuapp.com/" target="_blank" rel="noreferrer" >
+                                <WebIcon style={{ fontSize: 50, color: "black" }} />
                             </a>
-                            <a href=" https://projetofonte.herokuapp.com/" target="_blank">
-                                <StorageIcon style={{ fontSize: 60, color: "black" }} />
+                            <a href="https://github.com/projetoFonte" target="_blank" rel="noreferrer" >
+                                <GitHubIcon style={{ fontSize: 50, color: "black" }} />
                             </a>
-                            <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank">
-                                <EmailIcon style={{ fontSize: 60, color: "black" }} />
+                            <a href = "mailto:projectfonte@gmail.com" target="_blank" rel="noreferrer" >
+                                <EmailIcon style={{ fontSize: 50, color: "black" }} />
                             </a>
                         </Box>
                     </Box>
