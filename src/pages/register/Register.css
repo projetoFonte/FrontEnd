@@ -1,18 +1,46 @@
-.imagem2{
-    
-    background-image: url(https://imgur.com/WMHOeH8.gif);
+.registerBg{
+    background-image: url(../../assets/img/signin.png);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-
 }
 
-.textos2{
+.text{
     font-weight: bold !important;
 }
 
-.btnCancelar{
+.marginRight{
     margin-right: 20px !important;
+}
+
+.registerBtn{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.registerBtn:hover,
+.registerBtn:focus{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.cancelBtn{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.cancelBtn:hover,
+.cancelBtn:focus{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
 }

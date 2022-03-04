@@ -1,8 +1,36 @@
+.imgBg{
+    background-image: url('../../assets/img/logo1.png')!important;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vh;
+    height: 70vh;
+}
+
 .homeBg{
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #26bee3!important;
+    background-color: #8ccbbe;
     background-size: cover;
-    width: "100vh";
-    height: "100vh";
+    /* width: 100vh;
+    height: 100vh; */
+}
+
+.homeBtn{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.homeBtn:hover,
+.homeBtn:focus{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.text{
+    color: #e4e4e4;
+    font-weight: bold!important;
 }

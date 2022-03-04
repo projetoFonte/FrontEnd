@@ -1,18 +1,27 @@
-.box1{
-    background-color: #07a6ce;
-    height: 120px;
+.footerBg{
+    background-color: #3797a4;
 }
 
-.box2{
-    background-color: #07a6ce;
-    height: 60px;
+.m{
+    margin: 0 10px;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.box{
+    height: 100px;
+}
+
+.box1{
+    height: 61px;
 }
 
 .redes{
-    font-size: 40px !important;
-    color: rgb(0, 0, 0);
+    color: #e4e4e4;
 }
 
-.textos{
-   color: rgb(0, 0, 0);
+.bold{
+    font-weight: bold!important;
 }

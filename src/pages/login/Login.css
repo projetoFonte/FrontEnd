@@ -1,0 +1,36 @@
+.loginBg{
+    background-image: url('../../assets/img/logintech.png');
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.title{
+    font-weight: bold!important;
+}
+
+.loginBtn{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.loginBtn:hover,
+.loginBtn:focus{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.register{
+    font-weight: bold!important;
+    color: #3797a4;
+}

@@ -1,40 +1,21 @@
-.flex
-{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+.profileBg{
+    background-color: #8ccbbe;
 }
 
-.cabecario
-{
-    background-color: #A4EBF3;
+.p{
+    padding: 20px;
 }
 
-.avatarSize
-{
-    margin: 20px;
-    width: 160px!important;
-    height: 160px!important;
+.avatar{
+    width: 240px!important;
+    height: 240px!important;
 }
 
-.typography
-{
-    font-size: large;
-    color: #F4F9F9;
-    text-align: center;
-    word-wrap: normal;
-    font-weight: bold !important ;
+.pfTitle{
+    color: #3797a4;
+    font-weight: bold!important;
 }
 
-.typographyTitulo
-{
-    font-size: 24px;
-    color: black;
-    text-align: center!important;
-    font-weight: bold !important;
-}
-
-.grid
-{
-    display: flex;
+.pfText{
+    color: #e4e4e4;
 }

@@ -3,51 +3,50 @@ import Avatar from '@material-ui/core/Avatar';
 import { Grid, Box, Typography } from '@material-ui/core';
 import "./Profile.css";
 
-
 function Profile() {
-  return (
-    <>
-      <Grid container className='flex cabecario'>
-        <Grid alignItems='center' item xs={4}>
-          <Box paddingX={4} className='flex'>
-            <Box alignContent='center'>
-              <Avatar alt='Remy Sharp' src="/static/images/avatar/1.jpg" className='avatarSize' />
-              <Typography className='typography'>
-                Nome do Usuário
-              </Typography>
+  return(
+
+    <Grid container direction="row" className='profileBg'>
+
+      <Box display="flex" flexDirection="row">
+        <Box className='p'>
+          <Avatar src="/broken-image.jpg"  alt="" className='avatar' />     
+        </Box>
+      
+        <Grid container className='p'>
+          <Grid item xs={6}>
+            <Typography variant='h6' gutterBottom component='h6' className='pfTitle'>Nome do Usuário</Typography>
+
+            <Typography display="inline" className='pfText'>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga numquam expedita laboriosam eveniet ad pariatur? Soluta hic ipsa eius expedita ullam, sint rem iste, earum placeat molestiae odit.
+            </Typography>
+
+          <Box display="flex" flexDirection="row">
+            <Box flexDirection="column" className='p'>
+              <Box className='pfTitle'>
+                Gotas
+              </Box>
+              <Box className='pfText'>
+                000
+              </Box>
             </Box>
-            <Grid alignItems='center' item xs={8}>
-              <Box display="flex" justifyContent="space-between" alignItems="center" >
-                <Box display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" >
-                  <Typography className='typography'>
-                    Gotas
-                  </Typography>
-                  <Typography className='typography'>
-                    123
-                  </Typography>
-                </Box>
-                <Box display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" >
-                  <Typography className='typography'>
-                    Moedas
-                  </Typography>
-                  <Typography className='typography'>
-                    123
-                  </Typography>
-                </Box>
-              </Box>
 
-              <Box>
-                <Typography className='typography'>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et eveniet tempora ad, assumenda quam, rem nemo beatae accusantium pariatur voluptate ab ex repellat vitae? Labore quos rerum voluptate quisquam sed.
-                </Typography>
-
+          <Box flexDirection="column" className='p'>
+            <Box className='pfTitle'>
+                Moedas
               </Box>
-            </Grid>
+              <Box className='pfText'>
+                000
+              </Box>
+            </Box>
           </Box>
+
+          </Grid>
+
         </Grid>
-      </Grid>
-    </>
-  )
+      </Box>
+    </Grid>
+    )
 }
 
 export default Profile;

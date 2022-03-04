@@ -28,15 +28,15 @@ function App() {
             <Home/>
           </Route>
 
-          <Route path='/about'>
+          <Route path='/sobre'>
             <About/>
           </Route>
 
-          <Route path='/cadastrousuario'>
+          <Route path='/cadastro'>
             <Register/>
           </Route>
 
-          <Route path='/profile'>
+          <Route path='/perfil'>
             <Profile />
           </Route>
 

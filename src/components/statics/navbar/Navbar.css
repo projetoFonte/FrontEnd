@@ -1,20 +1,21 @@
-.cursor{
-    cursor: pointer;
-    color: white;
+.bg{
+    background-color: #8ccbbe!important;
+}
+
+.img{
+    image-resolution: 300dpi;
+    width: 60px;
+    height: 60px;
 }
 
 .text-decorator-none{
     text-decoration: none;
 }
 
-.bar{
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
+.home{
+    color: white!important;
 }
 
-.nav-text{
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
+.color{
+    color: black;
 }
