@@ -11,8 +11,8 @@ import CreatePost from './components/posts/createpost/CreatePost';
 import DeletePost from './components/posts/deletepost/DeletePost';
 import CreateTheme from './components/theme/createtheme/CreateTheme';
 import DeleteTheme from './components/theme/deletetheme/DeleteTheme';
-import "./App.css";
 
+import "./App.css";
 
 function App() {
   return (
