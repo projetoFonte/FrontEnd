@@ -31,7 +31,7 @@ function Footer() {
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <a target="_blank" href="https://brasil.generation.org" rel="noreferrer" className="text-decorator-none">
-                <Typography variant="subtitle2" gutterBottom className='redes bold' align="center">Generation Brasil</Typography>
+                <Typography variant="subtitle2" className='redes bold' align="center">Generation Brasil</Typography>
               </a>
             </Box>
           </Box>
