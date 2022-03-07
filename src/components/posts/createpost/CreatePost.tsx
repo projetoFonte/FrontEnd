@@ -97,7 +97,8 @@ function CreatePost() {
     }
 
     function back() {
-        history.push('/posts')
+        history.go(0)
+        history.push('/home')
     }
 
     return (
