@@ -55,14 +55,14 @@ function ThemeList() {
 
               <Link to={`/formulariotema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                  <Button variant="contained" size='small' className='marginLeft attBtn'>
                     atualizar
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletartema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
+                  <Button variant="contained" size='small' className='delBtn'>
                     deletar
                   </Button>
                 </Box>

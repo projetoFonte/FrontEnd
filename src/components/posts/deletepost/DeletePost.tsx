@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
-import './DeletePost.css';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Post';
 import { buscaId, deleteId } from '../../../services/Service';
+import './DeletePost.css';
 
 function DeletePost() {
     let history = useHistory();
@@ -54,7 +54,7 @@ function DeletePost() {
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem?
+                Deseja deletar a postagem?
               </Typography>
               <Typography color="textSecondary" >
               {post?.titulo}

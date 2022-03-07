@@ -1,3 +1,33 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.attBtn{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.attBtn:hover,
+.attBtn:focus{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.delBtn{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.delBtn:hover,
+.delBtn:focus{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}

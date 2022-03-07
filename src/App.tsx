@@ -10,9 +10,9 @@ import Profile from './pages/profile/Profile';
 import CreatePost from './components/posts/createpost/CreatePost';
 import DeletePost from './components/posts/deletepost/DeletePost';
 import CreateTheme from './components/theme/createtheme/CreateTheme';
-import PostList from './components/posts/postlist/PostList';
-import ThemeList from './components/theme/themelist/ThemeList'; 
+import DeleteTheme from './components/theme/deletetheme/DeleteTheme';
 import "./App.css";
+
 
 function App() {
   return (
@@ -61,8 +61,9 @@ function App() {
           <Route path='/deletarpostagem/:id'>
             <DeletePost />
           </Route>
+
           <Route path='/deletartema/:id'>
-            <DeletePost />
+            <DeleteTheme />
           </Route> 
 
           {/* <Route path='/posts'>

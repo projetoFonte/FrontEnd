@@ -45,7 +45,6 @@ function CreateTheme() {
                 ...tema,
                 [e.target.name]: e.target.value,
             })
-    
         }
         
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
@@ -69,7 +68,6 @@ function CreateTheme() {
                 alert('Tema cadastrado com sucesso.');
             }
             back()
-    
         }
     
         function back() {
