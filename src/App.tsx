@@ -7,8 +7,8 @@ import Footer from './components/statics/footer/Footer';
 import Navbar from './components/statics/navbar/Navbar';
 import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
+import CreatePost from './components/posts/createpost/CreatePost';
 import "./App.css";
-
 
 function App() {
   return (
@@ -39,6 +39,27 @@ function App() {
           <Route path='/perfil'>
             <Profile />
           </Route>
+
+          <Route exact path='/formulariopostagem'>
+            <CreatePost />
+          </Route>
+          <Route exact path='/formulariopostagem/:id'>
+            <CreatePost />
+          </Route>
+
+          {/* <Route exact path='/formulariotema'>
+            <CadastroTema />
+          </Route> */}
+          {/* <Route exact path='/formulariotema/:id'>
+            <CadastroTema />
+          </Route> */}
+
+          {/* <Route path='/deletarpostagem/:id'>
+            <DeletePost />
+          </Route>
+          <Route path='/deletartema/:id'>
+            <DeletePost />
+          </Route> */}
 
         </div>
       </Switch>
