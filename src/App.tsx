@@ -9,6 +9,9 @@ import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
 import CreatePost from './components/posts/createpost/CreatePost';
 import DeletePost from './components/posts/deletepost/DeletePost';
+import CreateTheme from './components/theme/createtheme/CreateTheme';
+import PostList from './components/posts/postlist/PostList';
+import ThemeList from './components/theme/themelist/ThemeList'; 
 import "./App.css";
 
 function App() {
@@ -48,12 +51,12 @@ function App() {
             <CreatePost />
           </Route>
 
-          {/* <Route exact path='/formulariotema'>
-            <CadastroTema />
-          </Route> */}
-          {/* <Route exact path='/formulariotema/:id'>
-            <CadastroTema />
-          </Route> */}
+          <Route exact path='/formulariotema'>
+            <CreateTheme />
+          </Route>
+          <Route exact path='/formulariotema/:id'>
+            <CreateTheme />
+          </Route> 
 
           <Route path='/deletarpostagem/:id'>
             <DeletePost />
@@ -61,6 +64,13 @@ function App() {
           <Route path='/deletartema/:id'>
             <DeletePost />
           </Route> 
+
+          {/* <Route path='/posts'>
+            <PostList />
+          </Route>
+          <Route path='/temas'>
+            <ThemeList />
+          </Route>  */}
 
         </div>
       </Switch>

@@ -14,7 +14,7 @@ function PostList() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      alert("É necessário estar logado.")
       history.push("/login")
 
     }
@@ -51,22 +51,22 @@ function PostList() {
                   {post.texto}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.tema?.descricao}
+                  {post.tema?.categoria}
                 </Typography>
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formulariopostagem/${post.id}`} >
+                  <Link to={`/formulariopostagem/${post.id}`} className='text-decorator-none'>
                     <Box mx={1}>
-                      <Button variant="contained"size='small' color="primary" >
+                      <Button variant="contained"size='small' className='attBtn'>
                         atualizar
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletarpostagem/${post.id}`}>
+                  <Link to={`/deletarpostagem/${post.id}`} className='text-decorator-none'>
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button variant="contained" size='small' className='delBtn' >
                         deletar
                       </Button>
                     </Box>

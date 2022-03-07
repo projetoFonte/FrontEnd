@@ -15,7 +15,7 @@ function CreatePost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            alert("É necessário estar logado.")
             history.push("/login")
 
         }
@@ -24,6 +24,7 @@ function CreatePost() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
+            categoria: '',
             descricao: ''
         })
     const [postagem, setPostagem] = useState<Postagem>({
@@ -83,30 +84,28 @@ function CreatePost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            alert('Sua postagem foi atualizada com sucesso.');
         } else {
             post(`/postagem`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            alert('Sua postagem foi cadastrada com sucesso!');
         }
         back()
-
     }
 
     function back() {
         history.go(0)
-        history.push('/home')
     }
 
     return (
         <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça uma postagem!</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
@@ -120,12 +119,12 @@ function CreatePost() {
                         })}>
                         {
                             temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                                <MenuItem value={tema.id}>{tema.categoria}</MenuItem>
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <FormHelperText>Escolha uma categoria para a postagem.</FormHelperText>
+                    <Button type="submit" variant="contained" className='postBtn'>
                         Finalizar
                     </Button>
                 </FormControl>

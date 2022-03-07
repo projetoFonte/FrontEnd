@@ -1,6 +1,7 @@
 interface Theme{
     id: number;
-    descricao: string;
+    categoria: string,
+    descricao: string
 }
 
 export default Theme;

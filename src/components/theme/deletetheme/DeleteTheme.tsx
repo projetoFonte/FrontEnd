@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
-import './DeletePost.css';
+import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import Postagem from '../../../models/Post';
 import { buscaId, deleteId } from '../../../services/Service';
+import Tema from '../../../models/Theme';
+import './DeleteTheme.css';
 
-function DeletePost() {
+function DeleteTheme() {
     let history = useHistory();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage('token');
-    const [post, setPosts] = useState<Postagem>()
+    const [tema, setTema] = useState<Tema>()
 
     useEffect(() => {
         if (token == "") {
@@ -27,7 +27,7 @@ function DeletePost() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/postagem/${id}`, setPosts, {
+        buscaId(`/tema/${id}`, setTema, {
             headers: {
               'Authorization': token
             }
@@ -35,44 +35,44 @@ function DeletePost() {
         }
 
         function sim() {
-            history.push('/home')
-            deleteId(`/postagem/${id}`, {
+            history.push('/tema')
+            deleteId(`/tema/${id}`, {
               headers: {
                 'Authorization': token
               }
             });
-            alert('Sua postagem foi deletada com sucesso.');
+            alert('Tema deletado com sucesso.');
           }
         
           function nao() {
             history.push('/home')
           }
+          
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined" >
+        <Card variant="outlined">
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem?
+                Deseja deletar o Tema?
               </Typography>
-              <Typography color="textSecondary" >
-              {post?.titulo}
+              <Typography color="textSecondary">
+                {tema?.descricao}
               </Typography>
             </Box>
-
           </CardContent>
           <CardActions>
-            <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
+            <Box display="flex" justifyContent="start" ml={1.0} mb={2}>
               <Box mx={2}>
-              <Button onClick={sim} className='simBtn'>
-                Sim
-              </Button>
+                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                  Sim
+                </Button>
               </Box>
-              <Box>
-              <Button onClick={nao} className='naoBtn'>
-                Não
-              </Button>
+              <Box mx={2}>
+                <Button  onClick={nao} variant="contained" size='large' color="secondary">
+                  Não
+                </Button>
               </Box>
             </Box>
           </CardActions>
@@ -81,4 +81,5 @@ function DeletePost() {
     </>
   );
 }
-export default DeletePost;
+
+export default DeleteTheme;
