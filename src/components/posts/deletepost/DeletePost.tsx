@@ -27,7 +27,7 @@ function DeletePost() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/posts/${id}`, setPosts, {
+        buscaId(`/postagem/${id}`, setPosts, {
             headers: {
               'Authorization': token
             }
@@ -35,8 +35,8 @@ function DeletePost() {
         }
 
         function sim() {
-            history.push('/posts')
-            deleteId(`/posts/${id}`, {
+            history.push('/postagem')
+            deleteId(`/postagem/${id}`, {
               headers: {
                 'Authorization': token
               }
@@ -45,7 +45,7 @@ function DeletePost() {
           }
         
           function nao() {
-            history.push('/posts')
+            history.push('/postagem')
           }
   return (
     <>
@@ -70,7 +70,7 @@ function DeletePost() {
               </Button>
               </Box>
               <Box>
-              <Button  onClick={nao} color="secondary">
+              <Button onClick={nao} color="secondary">
                 Não
               </Button>
               </Box>

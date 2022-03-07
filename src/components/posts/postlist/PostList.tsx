@@ -21,7 +21,7 @@ function PostList() {
   }, [token])
 
   async function getPost() {
-    await busca("/posts", setPosts, {
+    await busca("/postagem", setPosts, {
       headers: {
         'Authorization': token
       }
@@ -57,14 +57,14 @@ function PostList() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formularioPostagem/${post.id}`} >
+                  <Link to={`/formulariopostagem/${post.id}`} >
                     <Box mx={1}>
                       <Button variant="contained"size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletePost/${post.id}`}>
+                  <Link to={`/deletarpostagem/${post.id}`}>
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         deletar

@@ -8,6 +8,7 @@ import Navbar from './components/statics/navbar/Navbar';
 import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
 import CreatePost from './components/posts/createpost/CreatePost';
+import DeletePost from './components/posts/deletepost/DeletePost';
 import "./App.css";
 
 function App() {
@@ -54,12 +55,12 @@ function App() {
             <CadastroTema />
           </Route> */}
 
-          {/* <Route path='/deletarpostagem/:id'>
+          <Route path='/deletarpostagem/:id'>
             <DeletePost />
           </Route>
           <Route path='/deletartema/:id'>
             <DeletePost />
-          </Route> */}
+          </Route> 
 
         </div>
       </Switch>

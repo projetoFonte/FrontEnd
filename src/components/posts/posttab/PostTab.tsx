@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography, Box } from '@material-ui/core';
 import { TabContext, TabPanel } from '@material-ui/lab';
-// import ListaPostagem from '../postlist/PostList';
+import PostList from '../postlist/PostList';
 import './PostTab.css';
-
 
 function PostTab() {
     const [value, setValue] = useState('1')
@@ -21,7 +20,7 @@ function PostTab() {
         </AppBar>
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">
-            {/* <PostList/> */}
+            <PostList />
           </Box>
         </TabPanel>
         <TabPanel value="2">
@@ -32,4 +31,5 @@ function PostTab() {
     </>
   );
 }
+
 export default PostTab;

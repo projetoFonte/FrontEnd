@@ -6,6 +6,10 @@
     height: 70vh;
 }
 
+.postagens{
+    background-color: white;
+}
+
 .homeBg{
     background-position: center;
     background-repeat: no-repeat;
@@ -15,7 +19,7 @@
     height: 100vh; */
 }
 
-.homeBtn{
+/* .homeBtn{
     color: #3797a4!important;
     background: #e4e4e4!important;
     font-weight: bold!important;
@@ -28,7 +32,7 @@
     background: #3797a4!important;
     font-weight: bold!important;
     border-radius: 10px!important;
-}
+} */
 
 .text{
     color: #e4e4e4;

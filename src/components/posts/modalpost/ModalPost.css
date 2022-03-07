@@ -2,7 +2,17 @@
     cursor: pointer;
 }
 
-.btnModal{
-    border-color: white !important;
-    background-color: white !important;
+.modalBtn{
+    color: #3797a4!important;
+    background: #e4e4e4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.modalBtn:hover,
+.modalBtn:focus{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
 }

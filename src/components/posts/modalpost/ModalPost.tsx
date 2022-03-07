@@ -6,7 +6,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import CadastroPost from '../createpost/CreatePost';
 import './ModalPost.css';
 
-
 function getModalStyle() {
   const top = 50 ;
   const left = 50;
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function ModalPostagem () {
+function ModalPost () {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
@@ -60,8 +59,8 @@ function ModalPostagem () {
     <div>
       <Button
         variant="outlined"
-        className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
+        className='modalBtn'
+        onClick={handleOpen}>Criar post</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -73,4 +72,4 @@ function ModalPostagem () {
     </div>
   );
 }
-export default ModalPostagem;
+export default ModalPost;
