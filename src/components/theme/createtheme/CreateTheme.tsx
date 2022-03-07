@@ -59,17 +59,16 @@ function CreateTheme() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso.');
+                alert('Tema atualizado com sucesso');
             } else {
                 post(`/tema`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Tema cadastrado com sucesso.');
+                alert('Tema cadastrado com sucesso');
             }
             back()
-    
         }
     
         function back() {
