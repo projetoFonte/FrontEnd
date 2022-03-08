@@ -5,6 +5,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Post';
 import { buscaId, deleteId } from '../../../services/Service';
 import './DeletePost.css';
+import { toast } from 'react-toastify';
 
 function DeletePost() {
     let history = useHistory();
@@ -14,7 +15,16 @@ function DeletePost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("É necessário estar logado.")
+            toast.error('É necessário estar logado.', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress:undefined,
+            });
             history.push("/login")
     
         }
@@ -41,7 +51,17 @@ function DeletePost() {
                 'Authorization': token
               }
             });
-            alert('Sua postagem foi deletada com sucesso.');
+            toast.success('Sua postagem foi deletada com sucesso.', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress:undefined,
+          });
+
           }
         
           function nao() {

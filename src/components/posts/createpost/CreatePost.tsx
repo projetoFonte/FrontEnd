@@ -6,6 +6,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Post';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CreatePost.css';
+import { toast } from 'react-toastify';
 
 function CreatePost() {
     let history = useHistory();
@@ -15,7 +16,16 @@ function CreatePost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("É necessário estar logado.")
+            toast.error('É necessário estar logado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress:undefined,
+              });
             history.push("/login")
 
         }
@@ -84,14 +94,32 @@ function CreatePost() {
                     'Authorization': token
                 }
             })
-            alert('Sua postagem foi atualizada com sucesso.');
+            toast.success('Sua postagem foi atualizada com sucesso.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress:undefined,
+            });
         } else {
             post(`/postagem`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Sua postagem foi cadastrada com sucesso!');
+            toast.success('Sua postagem foi cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress:undefined,
+            });
         }
         back()
     }

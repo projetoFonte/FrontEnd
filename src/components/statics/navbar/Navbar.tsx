@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+
 function Navbar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

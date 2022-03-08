@@ -1,53 +1,72 @@
 import React, { useEffect, useState } from 'react'
-import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Theme';
 import './DeleteTheme.css';
+import { toast } from 'react-toastify';
 
 function DeleteTheme() {
-    let history = useHistory();
-    const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
-    const [tema, setTema] = useState<Tema>()
+  let history = useHistory();
+  const { id } = useParams<{ id: string }>();
+  const [token, setToken] = useLocalStorage('token');
+  const [tema, setTema] = useState<Tema>()
 
-    useEffect(() => {
-        if (token == "") {
-            alert("É necessário estar logado.")
-            history.push("/login")
-    
-        }
-    }, [token])
+  useEffect(() => {
+    if (token == "") {
+      toast.error('É necessário estar logado.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+      history.push("/login")
 
-    useEffect(() =>{
-        if(id !== undefined){
-            findById(id)
-        }
-    }, [id])
+    }
+  }, [token])
 
-    async function findById(id: string) {
-        buscaId(`/tema/${id}`, setTema, {
-            headers: {
-              'Authorization': token
-            }
-          })
-        }
+  useEffect(() => {
+    if (id !== undefined) {
+      findById(id)
+    }
+  }, [id])
 
-        function sim() {
-            history.push('/tema')
-            deleteId(`/tema/${id}`, {
-              headers: {
-                'Authorization': token
-              }
-            });
-            alert('Tema deletado com sucesso.');
-          }
-        
-          function nao() {
-            history.push('/home')
-          }
-          
+  async function findById(id: string) {
+    buscaId(`/tema/${id}`, setTema, {
+      headers: {
+        'Authorization': token
+      }
+    })
+  }
+
+  function sim() {
+    history.push('/tema')
+    deleteId(`/tema/${id}`, {
+      headers: {
+        'Authorization': token
+      }
+    });
+    toast.success('Tema deletado com sucesso', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
+  }
+
+  function nao() {
+    history.push('/home')
+  }
+
   return (
     <>
       <Box m={2}>
@@ -70,7 +89,7 @@ function DeleteTheme() {
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button  onClick={nao} variant="contained" className='naoBtn'>
+                <Button onClick={nao} variant="contained" className='naoBtn'>
                   Não
                 </Button>
               </Box>

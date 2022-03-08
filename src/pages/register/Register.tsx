@@ -1,15 +1,16 @@
-import React, {useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import User from '../../models/User';
 import { register } from '../../services/Service';
-import { Grid, Box, Typography, Button, TextField} from '@material-ui/core';
+import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './Register.css';
+import { toast } from 'react-toastify';
 
-function Register(){
+function Register() {
 
     let history = useHistory();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
             id: 0,
@@ -33,7 +34,7 @@ function Register(){
     }, [userResult])
 
 
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
@@ -47,22 +48,40 @@ function Register(){
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha === user.senha  && user.senha.length >=8){
-        register(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuário cadastrado com sucesso!')
-        }else{
-            alert('Seus dados parecem inconsistentes, verifique as informações e tente novamente.')
+        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+            register(`/usuarios/cadastrar`, user, setUserResult)
+            toast.success('Usuário cadastrado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+        } else {
+            toast.error('Seus dados parecem inconsistentes, verifique as informações e tente novamente.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
 
-    return(
+    return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid item xs={6} className='registerBg'></Grid>
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
 
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' 
+                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center'
                             className='text'>Cadastre-se!</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             type='text' id='nome' label='Nome' placeholder='Como você prefere ser chamade?' variant='outlined'
@@ -74,19 +93,19 @@ function Register(){
                             id='senha' label='Senha' placeholder='Mínimo de 8 caracteres.' variant='outlined' name='senha'
                             margin='normal' type='password' required fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
-                            id='confirmPassword' label='Confirmar senha' placeholder='Digite a senha novamente para confirmação.' 
+                            id='confirmPassword' label='Confirmar senha' placeholder='Digite a senha novamente para confirmação.'
                             variant='outlined' name='confirmPassword' margin='normal' type='password' required fullWidth />
 
-                            <Box marginTop={2} textAlign='center'>
-                                <Link to='/login' className='text-decorator-none'>
+                        <Box marginTop={2} textAlign='center'>
+                            <Link to='/login' className='text-decorator-none'>
                                 <Button variant='contained' className='marginRight cancelBtn'>
                                     Cancelar
                                 </Button>
-                                </Link>
-                                <Button type='submit' variant='contained' className='registerBtn'>
-                                    Cadastrar
-                                </Button>
-                            </Box>
+                            </Link>
+                            <Button type='submit' variant='contained' className='registerBtn'>
+                                Cadastrar
+                            </Button>
+                        </Box>
                     </form>
                 </Box>
             </Grid>
