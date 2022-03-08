@@ -1,15 +1,10 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Theme';
 import { buscaId, post, put } from '../../../services/Service';
 import './CreateTheme.css';
 import { toast } from 'react-toastify';
-import {useHistory, useParams } from 'react-router-dom';
-import Tema from '../../../models/Theme';
-import { buscaId, post, put } from '../../../services/Service';
-import './CreateTheme.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 

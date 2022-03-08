@@ -6,6 +6,7 @@ import Tema from '../../../models/Theme';
 import './DeleteTheme.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function DeleteTheme() {
     let history = useHistory();

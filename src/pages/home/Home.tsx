@@ -4,12 +4,9 @@ import PostTab from '../../components/posts/posttab/PostTab';
 import ModalPost from '../../components/posts/modalpost/ModalPost';
 import { useHistory } from 'react-router-dom';
 import './Home.css';
-<<<<<<< Updated upstream
 import { toast } from 'react-toastify';
-=======
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
->>>>>>> Stashed changes
 
 function Home(){
 
