@@ -6,7 +6,7 @@ import ThemeList from '../../theme/themelist/ThemeList';
 import './PostTab.css';
 
 function PostTab() {
-    const [value, setValue] = useState('1')
+    const [value, setValue] = useState('3')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string){
         setValue(newValue);
     }

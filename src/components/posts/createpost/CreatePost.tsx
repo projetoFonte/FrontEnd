@@ -2,17 +2,21 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Theme';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Post';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CreatePost.css';
 import { toast } from 'react-toastify';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
+import { getPositionOfLineAndCharacter } from 'typescript';
 
 function CreatePost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     useEffect(() => {
         if (token == "") {
@@ -122,11 +126,15 @@ function CreatePost() {
             });
         }
         back()
+       
     }
 
-    function back() {
-        history.go(0)
-    }
+        function back(){
+
+            history.push('/posts')
+    
+        }
+        
 
     return (
         <Container maxWidth="sm" className="top">

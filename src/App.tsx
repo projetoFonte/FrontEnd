@@ -13,20 +13,23 @@ import CreateTheme from './components/theme/createtheme/CreateTheme';
 import DeleteTheme from './components/theme/deletetheme/DeleteTheme';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Provider} from 'react-redux';
+import store from './store/store';
 
 import "./App.css";
+import PostList from './components/posts/postlist/PostList';
 
 function App() {
   return (
-    <>
-      <ToastContainer />
-      <Router>
-        <Navbar />
-        <Switch>
-          <div style={{ minHeight: '100vh' }}>
-            <Route exact path='/'>
-              <Login />
-            </Route>
+    <Provider store={store}>
+       <ToastContainer />
+  <Router>
+    <Navbar/>
+      <Switch>
+        <div style={{minHeight: '100vh'}}>
+          <Route exact path='/'>
+            <Login/>
+          </Route>
 
             <Route path='/login'>
               <Login />
@@ -44,9 +47,13 @@ function App() {
               <Register />
             </Route>
 
-            <Route path='/perfil'>
-              <Profile />
-            </Route>
+          <Route path='/posts'>
+            <PostList/>
+          </Route>
+
+          <Route path='/perfil'>
+            <Profile />
+          </Route>
 
             <Route exact path='/formulariopostagem'>
               <CreatePost />
@@ -77,13 +84,12 @@ function App() {
             <ThemeList />
           </Route>  */}
 
-          </div>
-        </Switch>
-        <Footer />
-      </Router>
-      </>
-      );
-   
+        </div>
+      </Switch>
+    <Footer/>
+  </Router>
+  </Provider>
+  );
 }
 
 export default App;

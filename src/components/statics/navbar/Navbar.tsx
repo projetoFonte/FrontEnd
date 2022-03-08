@@ -74,6 +74,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 function Navbar() {
+
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -111,7 +113,6 @@ function Navbar() {
       <Link to="/perfil" className='text-decorator-none color'>     
         <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
       </Link>
-
       <Link to="/login" className='text-decorator-none color'>
         <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
       </Link>

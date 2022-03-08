@@ -3,14 +3,20 @@ import {Grid, Box, Typography, Button} from '@material-ui/core';
 import PostTab from '../../components/posts/posttab/PostTab';
 import ModalPost from '../../components/posts/modalpost/ModalPost';
 import { useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import './Home.css';
+<<<<<<< Updated upstream
 import { toast } from 'react-toastify';
+=======
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
+>>>>>>> Stashed changes
 
 function Home(){
 
   let history = useHistory();
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   
   useEffect(() => {
     if (token == "") {
@@ -27,7 +33,7 @@ function Home(){
         history.push("/login")
 
     }
-}, [token])
+}, [token]) 
 
     return(
         <>

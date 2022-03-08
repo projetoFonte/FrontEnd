@@ -7,11 +7,18 @@ import { useHistory } from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import './ThemeList.css';
 import { toast } from 'react-toastify';
+import {useHistory} from 'react-router-dom';
+import { busca } from '../../../services/Service';
+import './ThemeList.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ThemeList() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
   let history = useHistory();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == '') {
