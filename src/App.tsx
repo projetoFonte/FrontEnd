@@ -11,13 +11,12 @@ import CreatePost from './components/posts/createpost/CreatePost';
 import DeletePost from './components/posts/deletepost/DeletePost';
 import CreateTheme from './components/theme/createtheme/CreateTheme';
 import DeleteTheme from './components/theme/deletetheme/DeleteTheme';
+import PostList from './components/posts/postlist/PostList';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {Provider} from 'react-redux';
 import store from './store/store';
-
 import "./App.css";
-import PostList from './components/posts/postlist/PostList';
 
 function App() {
   return (
@@ -77,12 +76,13 @@ function App() {
               <DeleteTheme />
             </Route>
 
-            {/* <Route path='/posts'>
+          <Route path='/posts'>
             <PostList />
           </Route>
-          <Route path='/temas'>
+
+          {/* <Route path='/temas'>
             <ThemeList />
-          </Route>  */}
+          </Route>  */} 
 
         </div>
       </Switch>

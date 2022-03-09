@@ -2,6 +2,10 @@
     text-decoration: none;
 }
 
+.bgList{
+    background-color: white;
+}
+
 .attBtn{
     color: #e4e4e4!important;
     background: #3797a4!important;

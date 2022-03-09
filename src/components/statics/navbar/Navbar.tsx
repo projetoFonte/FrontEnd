@@ -1,11 +1,12 @@
 import React from 'react';
 import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import {AppBar, Toolbar, IconButton, InputBase, Badge, Box, Typography, MenuItem, Menu, Grid} from '@material-ui/core';
+import {AppBar, Toolbar, IconButton, InputBase, Badge, Box, MenuItem, Menu, Grid} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import HomeIcon from '@material-ui/icons/Home';
-import './Navbar.css';
+import FeedIcon from '@material-ui/icons/DynamicFeed';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -158,7 +159,7 @@ function Navbar() {
       <AppBar className='bg' position="static">
         <Toolbar>
 
-        <Link to='/sobre' className='text-decorator-none'> 
+        <Link to='/home' className='text-decorator-none'> 
           <Box>    
             <img src="https://imgur.com/YzFkLcc.png" alt="" className='img'/>
           </Box>
@@ -188,7 +189,19 @@ function Navbar() {
                     <HomeIcon />
                 </IconButton>
             </Link>
-           
+
+            <Link to="/posts" className='text-decorator-none'>
+                <IconButton color="inherit" className='home'>
+                    <FeedIcon />
+                </IconButton>
+            </Link>
+
+            {/* <Link to="/posts" className='text-decorator-none'>
+                <IconButton color="inherit" className='home img'>
+                    <img src="https://imgur.com/BJYVXLp.gif" alt="" />
+                </IconButton>
+            </Link> */}
+                
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -199,6 +212,7 @@ function Navbar() {
             >
               <AccountCircle />
             </IconButton>
+
           </div>
 
           <div className={classes.sectionMobile}>
