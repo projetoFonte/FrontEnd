@@ -4,17 +4,17 @@ import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Theme';
 import Postagem from '../../../models/Post';
 import { busca, buscaId, post, put } from '../../../services/Service';
-import './CreatePost.css';
 import { toast } from 'react-toastify';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { useSelector } from 'react-redux';
 import { getPositionOfLineAndCharacter } from 'typescript';
+import './CreatePost.css';
 
 function CreatePost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
 

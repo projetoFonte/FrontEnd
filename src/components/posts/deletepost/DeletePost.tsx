@@ -3,15 +3,15 @@ import {Typography, Button, Box, Card, CardActions, CardContent } from "@materia
 import { useHistory, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Post';
 import { buscaId, deleteId } from '../../../services/Service';
-import './DeletePost.css';
 import { toast } from 'react-toastify';
+import { UserState } from '../../../store/tokens/userReducer';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import './DeletePost.css';
 
 function DeletePost() {
     let history = useHistory();
     const { id } = useParams<{id: string}>();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
       (state) => state.tokens
     );
     const [post, setPosts] = useState<Postagem>()

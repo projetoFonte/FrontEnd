@@ -6,12 +6,12 @@ import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, CardMedia, makeStyles, Menu, MenuItem, Grid } from '@material-ui/core';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import blue from '@material-ui/core/colors/blue';
-import './PostList.css';
 import ThemeList from '../../theme/themelist/ThemeList';
 import Profile from '../../../pages/profile/Profile';
+import './PostList.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +48,7 @@ function PostList() {
 
   const [posts, setPosts] = useState<Postagem[]>([])
   let history = useHistory();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
