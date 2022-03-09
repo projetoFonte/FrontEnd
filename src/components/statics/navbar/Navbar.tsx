@@ -5,8 +5,14 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import HomeIcon from '@material-ui/icons/Home';
 import FeedIcon from '@material-ui/icons/DynamicFeed';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
+import { toast } from 'react-toastify';
+import { addToken } from '../../../store/tokens/actions';
+import { useDispatch, useSelector} from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -76,6 +82,26 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Navbar() {
 
+const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens);
+    let history = useHistory();
+    const dispatch = useDispatch();  
+
+    function goLogout() {
+      dispatch(addToken(''))
+      toast.info('Usuário deslogado com sucesso!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress:undefined,
+      });
+      history.push('/login')
+  }
+
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -115,10 +141,12 @@ function Navbar() {
         <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
       </Link>
       <Link to="/login" className='text-decorator-none color'>
-        <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+        <MenuItem onClick={goLogout}>Logout</MenuItem>
       </Link>
     </Menu>
   );
+
+  //onClick={handleMenuClose}
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -233,3 +261,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+function dispatch(arg0: any) {
+  throw new Error('Function not implemented.');
+}
