@@ -1,6 +1,6 @@
 import React from 'react';
 import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import {AppBar, Toolbar, IconButton, InputBase, Badge, Box, MenuItem, Menu, Grid} from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, InputBase, Badge, Box, MenuItem, Menu, Grid } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import HomeIcon from '@material-ui/icons/Home';
@@ -9,12 +9,17 @@ import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 import { toast } from 'react-toastify';
 import { addToken } from '../../../store/tokens/actions';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 
-const useStyles = makeStyles((theme: Theme) =>
+
+
+
+function Navbar() {
+
+  const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
       flexGrow: 1,
@@ -79,29 +84,27 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+  
 
-function Navbar() {
-
-const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens);
-    let history = useHistory();
-    const dispatch = useDispatch();  
+  let history = useHistory();
+  const dispatch = useDispatch();
 
-    function goLogout() {
-      dispatch(addToken(''))
-      toast.info('Usuário deslogado com sucesso!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "colored",
-          progress:undefined,
-      });
-      history.push('/login')
+  function goLogout() {
+    dispatch(addToken(''))
+    toast.info('Usuário deslogado com sucesso!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
+    history.push('/login')
   }
-
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -137,7 +140,7 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}>
-      <Link to="/perfil" className='text-decorator-none color'>     
+      <Link to="/perfil" className='text-decorator-none color'>
         <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
       </Link>
       <Link to="/login" className='text-decorator-none color'>
@@ -182,86 +185,98 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
     </Menu>
   );
 
-  return (
-    <div className={classes.grow}>
-      <AppBar className='bg' position="static">
-        <Toolbar>
+  var navbarComponent;
 
-        <Link to='/home' className='text-decorator-none'> 
-          <Box>    
-            <img src="https://imgur.com/YzFkLcc.png" alt="" className='img'/>
-          </Box>
-        </Link>
+  if (token != "") {
+    navbarComponent = <div className='navbar'>
 
-        <Grid container direction="row" justifyContent="center" alignItems="center">
-          <Box className={classes.search}>
-           
+
+
+      <div className={classes.grow}>
+        <AppBar className='navbar' position="static" >
+          <Toolbar>
+
+            <Link to='/home' className='text-decorator-none'>
+              <Box>
+                <img src="https://imgur.com/YzFkLcc.png" alt="" className='img' />
+              </Box>
+            </Link>
+
+            <Grid container direction="row" justifyContent="center" alignItems="center">
+              <Box className={classes.search}>
+
                 <Box className={classes.searchIcon}>
-                <SearchIcon />
+                  <SearchIcon />
                 </Box>
 
                 <InputBase
-                placeholder="Procurar..."
-                classes={{
+                  placeholder="Procurar..."
+                  classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}/>
-          </Box>
-        </Grid>
+                  }}
+                  inputProps={{ 'aria-label': 'search' }} />
+              </Box>
+            </Grid>
 
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <Link to="/home" className='text-decorator-none'>
+            <div className={classes.grow} />
+            <div className={classes.sectionDesktop}>
+              <Link to="/home" className='text-decorator-none'>
                 <IconButton color="inherit" className='home'>
-                    <HomeIcon />
+                  <HomeIcon />
                 </IconButton>
-            </Link>
+              </Link>
 
-            <Link to="/posts" className='text-decorator-none'>
+              <Link to="/posts" className='text-decorator-none'>
                 <IconButton color="inherit" className='home'>
-                    <FeedIcon />
+                  <FeedIcon />
                 </IconButton>
-            </Link>
+              </Link>
 
-            {/* <Link to="/posts" className='text-decorator-none'>
+              {/* <Link to="/posts" className='text-decorator-none'>
                 <IconButton color="inherit" className='home img'>
                     <img src="https://imgur.com/BJYVXLp.gif" alt="" />
                 </IconButton>
             </Link> */}
-                
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
 
-          </div>
+              <IconButton
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
 
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit">
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
+            </div>
+
+            <div className={classes.sectionMobile}>
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit">
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+      </div>
+      
+
+
     </div>
-  );
+  }
+
+  return (
+    <>
+      {navbarComponent}
+    </>
+  )
 }
 
 export default Navbar;
-
-function dispatch(arg0: any) {
-  throw new Error('Function not implemented.');
-}

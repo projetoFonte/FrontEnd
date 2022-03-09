@@ -19,3 +19,10 @@
 .color{
     color: black;
 }
+
+.navbar{
+    border-bottom: none;
+    box-shadow: none;
+    box-shadow: none;
+    background-color: #8ccbbe!important;
+  }
