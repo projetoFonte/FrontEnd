@@ -261,7 +261,3 @@ const token = useSelector<TokenState, TokenState["tokens"]>(
 }
 
 export default Navbar;
-
-function dispatch(arg0: any) {
-  throw new Error('Function not implemented.');
-}
