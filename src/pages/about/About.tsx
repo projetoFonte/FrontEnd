@@ -53,31 +53,74 @@ function About() {
                             <Typography className="sobre" variant="h4" gutterBottom color="textPrimary" component="h4" align="center" >
                                 Sobre Nós
                             </Typography>
-                            <Typography variant="body1" gutterBottom color="textPrimary" component="body" align="justify" >
 
-                                <img src="https://media-exp1.licdn.com/dms/image/D4E35AQETss4gTW6syg/profile-framedphoto-shrink_200_200/0/1637854227106?e=1646935200&v=beta&t=VL4cQuHwo5bbGtqsHVy71e7GhMw1wfNS6zyA8FCEyMI" alt="" />  <br></br>
+                            <Box display="flex" justifyContent="center">
+                                <Box>
+                                    <Box>
+                                        <img src="https://media-exp1.licdn.com/dms/image/D4E35AQETss4gTW6syg/profile-framedphoto-shrink_200_200/0/1637854227106?e=1646935200&v=beta&t=VL4cQuHwo5bbGtqsHVy71e7GhMw1wfNS6zyA8FCEyMI" alt="" />
+                                    </Box>
+                                    <Typography>
+                                        Karen Gabrieli (Ela ou Elu)
+                                    </Typography>
+                                    <Typography>
+                                        A Comunicadora
+                                    </Typography>
+                                    <Typography>
+                                        A mais velha, Enérgica e com facilidade com Front-End e UX Design.
+                                    </Typography>
 
-                                Karen Gabrieli (Ela ou Elu)<br></br>
-                                A Comunicadora<br></br>
-                                A mais velha, Enérgica e com facilidade com Front-End e UX Design.<br></br><br></br>
+                                </Box>
+                                <Box display="flex" justifyContent="center">
+                                    <Box>
+                                        <Box>
+                                            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF6rlcg6vclZA/profile-displayphoto-shrink_200_200/0/1607049610692?e=1652313600&v=beta&t=n_l0rOxzYqma_Ryj_WW9caowNeTSSbw8yJHhX6cpATw" alt="" />
+                                        </Box>
+                                        <Typography>
+                                            Natalia F Duque
+                                        </Typography>
+                                        <Typography>
+                                            A Detalhista
+                                        </Typography>
+                                        <Typography>
+                                            Da geração Z, Conciliadora e sempre querendo aprender.
+                                        </Typography>
+                                    </Box>
+                                </Box>
 
-                                <img src="" alt="" /><br></br>
+                                
+                                <Box>
+                                    <Box>
+                                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFSoJZAXSWlvA/profile-displayphoto-shrink_200_200/0/1646845220008?e=1652313600&v=beta&t=33I_EccaM67c1HwFT59yelTSbbJVHc78KMuStbvOHcY" alt="" />
+                                    </Box>
+                                    <Typography>
+                                        Gabriel Maia
+                                    </Typography>
+                                    <Typography>
+                                        O Observador
+                                    </Typography>
+                                    <Typography>
+                                        O mais novo, determinado e disposto a resolver qualquer problema, facilidade com Back-end.
+                                    </Typography>
 
-                                <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF6rlcg6vclZA/profile-displayphoto-shrink_200_200/0/1607049610692?e=1652313600&v=beta&t=n_l0rOxzYqma_Ryj_WW9caowNeTSSbw8yJHhX6cpATw" alt="" /> <br></br>
+                                </Box>
+                            </Box>
 
-                                Natalia F Duque<br></br>
-                                A Detalhista<br></br>
-                                Da geração Z, Conciliadora e sempre querendo aprender.<br></br><br></br>
 
-                                <img src="" alt="" /><br></br>
+                            <Box>
+                                <Box>
+                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFV3duPNF8f3Q/profile-displayphoto-shrink_800_800/0/1645064988888?e=1652313600&v=beta&t=qvrCViha1ka2D5UFHs8ru011vDlXLbQpLeh7l1lPoyY" alt="" />
+                                </Box>
+                                <Typography>
+                                    William Santos (Ele)
+                                </Typography>
+                                <Typography>
+                                    O professor
+                                </Typography>
+                                <Typography>
+                                    Apaixonado por tecnologia, motivado por desafios e sempre disponível quando alguém precisa de ajuda.
+                                </Typography>
 
-                                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFSoJZAXSWlvA/profile-displayphoto-shrink_200_200/0/1646845220008?e=1652313600&v=beta&t=33I_EccaM67c1HwFT59yelTSbbJVHc78KMuStbvOHcY" alt="" /> <br></br>
-
-                                Gabriel Maia<br></br>
-                                O observador<br></br>
-                                O mais novo, determinado e disposto a resolver qualquer problema, facilidade com Back-end<br></br>
-
-                            </Typography>
+                            </Box>
                         </Box>
                     </Box>
                 </Grid>
