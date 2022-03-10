@@ -5,10 +5,12 @@ import { busca } from '../../../services/Service'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
-import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, CardMedia, makeStyles, Menu, MenuItem } from '@material-ui/core';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, CardMedia, makeStyles, Menu, MenuItem, Grid } from '@material-ui/core';
+import { UserState } from '../../../store/tokens/userReducer';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import blue from '@material-ui/core/colors/blue';
+import ThemeList from '../../theme/themelist/ThemeList';
+import Profile from '../../../pages/profile/Profile';
 import './PostList.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +48,7 @@ function PostList() {
 
   const [posts, setPosts] = useState<Postagem[]>([])
   let history = useHistory();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
@@ -60,7 +62,7 @@ function PostList() {
         pauseOnHover: false,
         draggable: false,
         theme: "colored",
-        progress:undefined,
+        progress: undefined,
       });
       history.push("/login")
 
@@ -91,64 +93,80 @@ function PostList() {
 
   return (
     <>
-      {
-        posts.map(post => (
-          <Box m={2} className='bgList'>
-            <Card className={classes.root}>
-              <CardHeader
-                avatar={
-                  <Avatar aria-label="Água" className={classes.avatar}>
-                  </Avatar>
-                }
-                action={//três pontos
-                  <IconButton aria-label="settings" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
-                    <MoreVertIcon />
-                    <Menu id="simple-menu"
-                      anchorEl={anchorEl}
-                      keepMounted
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}>
+      <Grid container direction="row" justifyContent="space-between" alignContent="flex-start"  >
 
-                      <Link to={`/formulariopostagem/${post.id}`} >
-                        <MenuItem onClick={handleClose}>
-                          Atualizar
-                        </MenuItem>
-                      </Link>
+        <Grid container item xs={3} > {/* Mini Perfil */}
+          <Profile />
+        </Grid >
 
-                      <Link to={`/deletarpostagem/${post.id}`} >
-                        <MenuItem onClick={handleClose}>
-                          Deletar
-                        </MenuItem>
-                      </Link>
-                  </Menu>
-                  </IconButton>
-                  
-                }
-            title="Nome da Pessoa Usuária" //buscar do cadastro usuário
-            subheader="08 de Março de 2022" // verificar como buscar do back
-              />
+        
+        {
+          posts.map(post => (
+            <Grid container item xs={4}>
+              <Box m={2} className='bgList'>
+                <Card className={classes.root}>
+                  <CardHeader
+                    avatar={
+                      <Avatar aria-label="Água" className={classes.avatar}>
+                      </Avatar>
+                    }
+                    action={//três pontos
+                      <IconButton aria-label="settings" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
+                        <MoreVertIcon />
+                        <Menu id="simple-menu"
+                          anchorEl={anchorEl}
+                          keepMounted
+                          open={Boolean(anchorEl)}
+                          onClose={handleClose}>
 
-            <CardMedia
-              className={classes.media}
-              image={(post.imagem).toString()}
-              title="Imagem da Postagem"
-            />
+                          <Link to={`/formulariopostagem/${post.id}`} >
+                            <MenuItem onClick={handleClose}>
+                              Atualizar
+                            </MenuItem>
+                          </Link>
 
-            <CardContent>
-              <Typography variant="h5" component="h2">
-                {post.titulo}
-              </Typography>
-              <Typography paragraph>
-                {post.tema?.categoria}
-              </Typography>
-              <Typography paragraph>
-                {post.texto}
-              </Typography>
-            </CardContent>
-          </Card>
-          </Box>
-  ))
-}
+                          <Link to={`/deletarpostagem/${post.id}`} >
+                            <MenuItem onClick={handleClose}>
+                              Deletar
+                            </MenuItem>
+                          </Link>
+                        </Menu>
+                      </IconButton>
+
+                    }
+                    title="Nome da Pessoa Usuária" //buscar do cadastro usuário
+                    subheader="08 de Março de 2022" // verificar como buscar do back
+                  />
+
+                  <CardMedia
+                    className={classes.media}
+                    image={(post.imagem).toString()}
+                    title="Imagem da Postagem"
+                  />
+
+                  <CardContent>
+                    <Typography variant="h5" component="h2">
+                      {post.titulo}
+                    </Typography>
+                    <Typography paragraph>
+                      {post.tema?.categoria}
+                    </Typography>
+                    <Typography paragraph>
+                      {post.texto}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Grid>
+
+          ))
+        }
+        
+
+        <Grid container item xs={3}> {/* Lista de temas */}
+          <ThemeList />
+        </Grid>
+      </Grid>
     </>
   )
 }

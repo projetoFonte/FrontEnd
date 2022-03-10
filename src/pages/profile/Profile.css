@@ -16,6 +16,14 @@
     font-weight: bold!important;
 }
 
+.pfNome{
+    color: #3797a4;
+    font-weight: bold!important;
+    padding: 10px!important;
+    text-align: center!important;
+}
+
 .pfText{
     color: #e4e4e4;
+    text-align: center!important;
 }

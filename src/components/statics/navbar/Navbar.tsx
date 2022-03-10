@@ -6,16 +6,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import HomeIcon from '@material-ui/icons/Home';
 import FeedIcon from '@material-ui/icons/DynamicFeed';
 import { Link, useHistory } from 'react-router-dom';
-import './Navbar.css';
 import { toast } from 'react-toastify';
 import { addToken } from '../../../store/tokens/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-
-
-
-
-
+import { UserState } from '../../../store/tokens/userReducer';
+import './Navbar.css';
 
 function Navbar() {
 
@@ -86,7 +81,7 @@ function Navbar() {
 
   
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens);
   let history = useHistory();
   const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Grid, Box, Typography } from "@material-ui/core";
 import './About.css';
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { UserState } from '../../store/tokens/userReducer';
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 function About() {
 
     let history = useHistory();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

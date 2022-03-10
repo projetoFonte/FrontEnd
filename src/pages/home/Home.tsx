@@ -4,14 +4,14 @@ import PostTab from '../../components/posts/posttab/PostTab';
 import ModalPost from '../../components/posts/modalpost/ModalPost';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { TokenState } from '../../store/tokens/tokensReducer';
+import { UserState } from '../../store/tokens/userReducer';
 import { useSelector } from 'react-redux';
 import './Home.css';
 
 function Home(){
 
   let history = useHistory();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   
