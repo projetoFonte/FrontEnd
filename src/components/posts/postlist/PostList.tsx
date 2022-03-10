@@ -5,9 +5,10 @@ import { busca, buscaId } from '../../../services/Service'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
-import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, CardMedia, makeStyles, Menu, MenuItem, Grid } from '@material-ui/core';
+import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, CardMedia, makeStyles, Menu, MenuItem, Grid, CardActions } from '@material-ui/core';
 import { UserState } from '../../../store/tokens/userReducer';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import blue from '@material-ui/core/colors/blue';
 import User from '../../../models/User';
 import './PostList.css';
@@ -129,30 +130,6 @@ function PostList() {
                       <Avatar src={ user.foto }  alt={ user.nome }>
                       </Avatar>
                     }
-                    action={//três pontos
-                      <IconButton aria-label="settings" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
-                        <MoreVertIcon />
-                        <Menu id="simple-menu"
-                          anchorEl={anchorEl}
-                          keepMounted
-                          open={Boolean(anchorEl)}
-                          onClose={handleClose}>
-
-                          <Link to={`/formulariopostagem/${post.id}`} className='text-decorator-none fontColor'>
-                            <MenuItem onClick={handleClose}>
-                              Atualizar
-                            </MenuItem>
-                          </Link>
-
-                          <Link to={`/deletarpostagem/${post.id}`} className='text-decorator-none fontColor'>
-                            <MenuItem onClick={handleClose}>
-                              Deletar
-                            </MenuItem>
-                          </Link>
-                        </Menu>
-                      </IconButton>
-
-                    }
                     title={ user.nome }//{user.nome} buscar do cadastro usuário
                     subheader={post.dataDePostagem} // verificar como buscar do back
                   />
@@ -174,6 +151,21 @@ function PostList() {
                       {post.texto}
                     </Typography>
                   </CardContent>
+
+                  <CardActions disableSpacing>
+                    <Link to={`/formulariopostagem/${post.id}`} className='text-decorator-none'>
+                      <IconButton aria-label="add to favorites">
+                        <EditIcon />
+                      </IconButton>
+                    </Link>
+                  
+                  <Link to={`/deletarpostagem/${post.id}`} className='text-decorator-none'>
+                    <IconButton aria-label="share">
+                      <DeleteIcon />
+                    </IconButton>
+                  </Link>
+
+                  </CardActions>
                 </Card>
               </Box>
           ))

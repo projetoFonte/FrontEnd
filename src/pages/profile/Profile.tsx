@@ -62,7 +62,7 @@ function Profile() {
 
   return(
 
-    <Grid container direction="row" justifyContent='center' className='profileBg'>
+    <Grid container style={{ height:"100%" }} direction="row" justifyContent='center' className='profileBg'>
 
       <Box display="flex" flexDirection="row">
         <Box className='p'>

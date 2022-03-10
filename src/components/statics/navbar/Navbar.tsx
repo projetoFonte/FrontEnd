@@ -228,12 +228,6 @@ function Navbar() {
                 </IconButton>
               </Link>
 
-              {/* <Link to="/posts" className='text-decorator-none'>
-                <IconButton color="inherit" className='home img'>
-                    <img src="https://imgur.com/BJYVXLp.gif" alt="" />
-                </IconButton>
-            </Link> */}
-
               <IconButton
                 edge="end"
                 aria-label="account of current user"
