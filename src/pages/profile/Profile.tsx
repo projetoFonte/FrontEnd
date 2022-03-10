@@ -6,7 +6,9 @@ import { useHistory } from 'react-router-dom';
 import { UserState } from '../../store/tokens/userReducer';
 import User from '../../models/User';
 import { buscaId } from '../../services/Service';
+import { toast } from 'react-toastify';
 import "./Profile.css";
+
 
 function Profile() {
 
@@ -30,7 +32,16 @@ function Profile() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('É necessário estar logado.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       history.push("/login")
     }
   }, [token])

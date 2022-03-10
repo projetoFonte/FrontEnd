@@ -2,10 +2,14 @@
     text-decoration: none;
 }
 
+.fontColor{
+    color: black;
+}
+
 .bgList{
     background-color: white;
 }
 
 .paddingPost{
-    padding: 40px;
+    padding: 20px 40px;
 }

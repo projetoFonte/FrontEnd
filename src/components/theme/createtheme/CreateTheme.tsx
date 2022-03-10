@@ -3,10 +3,10 @@ import { Container, Typography, TextField, Button } from "@material-ui/core";
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Theme';
 import { buscaId, post, put } from '../../../services/Service';
-import './CreateTheme.css';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/userReducer';
+import './CreateTheme.css';
 
 function CreateTheme() {
     let history = useHistory();
@@ -70,7 +70,7 @@ function CreateTheme() {
                     'Authorization': token
                 }
             })
-            toast.success('Tema atualizado com sucesso', {
+            toast.success('Tema atualizado com sucesso.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -86,7 +86,7 @@ function CreateTheme() {
                     'Authorization': token
                 }
             })
-            toast.success('Tema cadastrado com sucesso', {
+            toast.success('Tema cadastrado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -101,7 +101,7 @@ function CreateTheme() {
     }
 
     function back() {
-        history.push('/home')
+        history.push('/feed')
     }
 
     return (
@@ -110,7 +110,7 @@ function CreateTheme() {
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre um tema!</Typography>
                 <TextField value={tema.categoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="categoria" label="Categoria" variant="outlined" name="categoria" margin="normal" fullWidth />
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className='temaBtn'>
                     Finalizar
                 </Button>
             </form>

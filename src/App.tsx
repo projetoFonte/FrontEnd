@@ -48,9 +48,9 @@ function App() {
               <Register />
             </Route>
 
-            <Route path='/posts'>
+            {/* <Route path='/posts'>
               <PostList />
-            </Route>
+            </Route> */}
 
             <Route path='/perfil'>
               <Profile />

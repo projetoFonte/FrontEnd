@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Postagem from '../../../models/Post';
 import { Link } from 'react-router-dom';
-import { busca } from '../../../services/Service'
+import { busca, buscaId } from '../../../services/Service'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { Box, Card, CardContent, Typography, CardHeader, Avatar, IconButton, Car
 import { UserState } from '../../../store/tokens/userReducer';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import blue from '@material-ui/core/colors/blue';
-import ThemeList from '../../theme/themelist/ThemeList';
+import User from '../../../models/User';
 import './PostList.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,9 +47,23 @@ function PostList() {
 
   const [posts, setPosts] = useState<Postagem[]>([])
   let history = useHistory();
+
+  const id = useSelector<UserState, UserState["id"]>(
+    (state) => state.id
+  );
+
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
+
+  const [user, setUser] = useState<User>({
+    id: +id,   
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
+
 
   useEffect(() => {
     if (token == "") {
@@ -67,6 +81,20 @@ function PostList() {
 
     }
   }, [token])
+
+  async function findById(id: string) {
+    buscaId(`/usuarios/id/${id}`, setUser, {
+      headers: {
+        'Authorization': token
+      }
+    })
+  }
+
+  useEffect(() => {
+    if (id !== undefined) {
+      findById(id)
+    }
+  }, [id])
 
   async function getPost() {
     await busca("/postagem", setPosts, {
@@ -98,7 +126,7 @@ function PostList() {
                 <Card>
                   <CardHeader
                     avatar={
-                      <Avatar aria-label="Água" className={classes.avatar}>
+                      <Avatar src={ user.foto }  alt={ user.nome }>
                       </Avatar>
                     }
                     action={//três pontos
@@ -110,13 +138,13 @@ function PostList() {
                           open={Boolean(anchorEl)}
                           onClose={handleClose}>
 
-                          <Link to={`/formulariopostagem/${post.id}`} >
+                          <Link to={`/formulariopostagem/${post.id}`} className='text-decorator-none fontColor'>
                             <MenuItem onClick={handleClose}>
                               Atualizar
                             </MenuItem>
                           </Link>
 
-                          <Link to={`/deletarpostagem/${post.id}`} >
+                          <Link to={`/deletarpostagem/${post.id}`} className='text-decorator-none fontColor'>
                             <MenuItem onClick={handleClose}>
                               Deletar
                             </MenuItem>
@@ -125,8 +153,8 @@ function PostList() {
                       </IconButton>
 
                     }
-                    title="Nome"//{user.nome} buscar do cadastro usuário
-                    subheader="08 de Março de 2022" // verificar como buscar do back
+                    title={ user.nome }//{user.nome} buscar do cadastro usuário
+                    subheader={post.dataDePostagem} // verificar como buscar do back
                   />
 
                   <CardMedia

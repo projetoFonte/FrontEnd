@@ -1,3 +1,10 @@
 .top{
     margin-top: 20px;
 }
+
+.temaBtn{
+    color: #e4e4e4!important;
+    background: #3797a4!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}

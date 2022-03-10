@@ -1,5 +1,8 @@
 .profileBg{
     background-color: #8ccbbe;
+    background-size: cover;
+    width: 100vh;
+    height: 100vh;
 }
 
 .p{

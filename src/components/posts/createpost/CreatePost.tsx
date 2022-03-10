@@ -7,7 +7,6 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/tokens/userReducer';
 import { useSelector } from 'react-redux';
-import { getPositionOfLineAndCharacter } from 'typescript';
 import './CreatePost.css';
 
 function CreatePost() {
@@ -41,11 +40,13 @@ function CreatePost() {
             categoria: '',
             descricao: ''
         })
+        
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         texto: '',
         imagem: '',
+        dataDePostagem: '',
         tema: null
     })
 
@@ -131,7 +132,7 @@ function CreatePost() {
 
         function back(){
 
-            history.push('/posts')
+            history.push('/feed')
     
         }
         

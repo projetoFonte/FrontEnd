@@ -50,7 +50,7 @@ function ThemeList() {
     <>
       {
         temas.map(tema => (
-          <Box m={2} >
+          <Box m={2} className='paddingTema'>
             <Card variant="outlined">
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
