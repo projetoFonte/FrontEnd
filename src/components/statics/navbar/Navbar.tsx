@@ -222,7 +222,7 @@ function Navbar() {
                 </IconButton>
               </Link>
 
-              <Link to="/posts" className='text-decorator-none'>
+              <Link to="/feed" className='text-decorator-none'>
                 <IconButton color="inherit" className='home'>
                   <FeedIcon />
                 </IconButton>
@@ -270,6 +270,7 @@ function Navbar() {
   return (
     <>
       {navbarComponent}
+      
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Postagem from '../../../models/Post';
+import { Link } from 'react-router-dom';
 import { busca } from '../../../services/Service'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -10,12 +10,11 @@ import { UserState } from '../../../store/tokens/userReducer';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import blue from '@material-ui/core/colors/blue';
 import ThemeList from '../../theme/themelist/ThemeList';
-import Profile from '../../../pages/profile/Profile';
 import './PostList.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 250,
   },
   media: {
     height: 0,
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expand: {
     transform: 'rotate(0deg)',
-    marginLeft: 'auto',
+    // marginLeft: 'auto',
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
@@ -92,19 +91,11 @@ function PostList() {
   };
 
   return (
-    <>
-      <Grid container direction="row" justifyContent="space-between" alignContent="flex-start"  >
-
-        <Grid container item xs={3} > {/* Mini Perfil */}
-          <Profile />
-        </Grid >
-
-        
+    <>  
         {
           posts.map(post => (
-            <Grid container item xs={4}>
-              <Box m={2} className='bgList'>
-                <Card className={classes.root}>
+              <Box m={2}  className='paddingPost'>
+                <Card>
                   <CardHeader
                     avatar={
                       <Avatar aria-label="Água" className={classes.avatar}>
@@ -134,7 +125,7 @@ function PostList() {
                       </IconButton>
 
                     }
-                    title="Nome da Pessoa Usuária" //buscar do cadastro usuário
+                    title="Nome"//{user.nome} buscar do cadastro usuário
                     subheader="08 de Março de 2022" // verificar como buscar do back
                   />
 
@@ -157,16 +148,8 @@ function PostList() {
                   </CardContent>
                 </Card>
               </Box>
-            </Grid>
-
           ))
         }
-        
-
-        <Grid container item xs={3}> {/* Lista de temas */}
-          <ThemeList />
-        </Grid>
-      </Grid>
     </>
   )
 }

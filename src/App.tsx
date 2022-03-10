@@ -12,9 +12,10 @@ import DeletePost from './components/posts/deletepost/DeletePost';
 import CreateTheme from './components/theme/createtheme/CreateTheme';
 import DeleteTheme from './components/theme/deletetheme/DeleteTheme';
 import PostList from './components/posts/postlist/PostList';
+import Feed from './pages/feed/Feed';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store/store';
 import "./App.css";
 
@@ -22,14 +23,14 @@ import "./App.css";
 function App() {
   return (
     <Provider store={store}>
-       <ToastContainer />
-  <Router>
-    <Navbar/>
-      <Switch>
-        <div style={{minHeight: '100vh'}}>
-          <Route exact path='/'>
-            <Login/>
-          </Route>
+      <ToastContainer />
+      <Router>
+        <Navbar />
+        <Switch>
+          <div style={{ minHeight: '100vh' }}>
+            <Route exact path='/'>
+              <Login />
+            </Route>
 
             <Route path='/login'>
               <Login />
@@ -47,13 +48,13 @@ function App() {
               <Register />
             </Route>
 
-          <Route path='/posts'>
-            <PostList/>
-          </Route>
+            <Route path='/posts'>
+              <PostList />
+            </Route>
 
-          <Route path='/perfil'>
-            <Profile />
-          </Route>
+            <Route path='/perfil'>
+              <Profile />
+            </Route>
 
             <Route exact path='/formulariopostagem'>
               <CreatePost />
@@ -77,19 +78,19 @@ function App() {
               <DeleteTheme />
             </Route>
 
-          <Route path='/posts'>
-            <PostList />
-          </Route>
+            <Route path='/feed'>
+              <Feed />
+            </Route>
 
-          {/* <Route path='/temas'>
+            {/* <Route path='/temas'>
             <ThemeList />
-          </Route>  */} 
+          </Route>  */}
 
-        </div>
-      </Switch>
-    <Footer/>
-  </Router>
-  </Provider>
+          </div>
+        </Switch>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 
