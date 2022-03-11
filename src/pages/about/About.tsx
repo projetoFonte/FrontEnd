@@ -46,7 +46,7 @@ function About() {
                                 <Grid item md={3} xs={10} >
                                     <Box className='padding'>
                                         <Box display="flex" justifyContent="center" >
-                                             <img src="https://media-exp1.licdn.com/dms/image/D4E35AQETss4gTW6syg/profile-framedphoto-shrink_200_200/0/1637854227106?e=1646935200&v=beta&t=VL4cQuHwo5bbGtqsHVy71e7GhMw1wfNS6zyA8FCEyMI" alt="Karen" className="bio"/>
+                                             <img src="https://media-exp1.licdn.com/dms/image/D4E35AQETss4gTW6syg/profile-framedphoto-shrink_200_200/0/1637854227106?e=1647090000&v=beta&t=vJaQkOAyMIz-SiN81hO6yLgfhbYdeG1XBVwPH1RYR8s" alt="Karen" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio">
                                             <a href="https://www.linkedin.com/in/karen-gabrieli-viana/" target="_blank" rel="noreferrer" className='text-decorator-none'>
