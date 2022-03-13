@@ -90,7 +90,7 @@ function Register() {
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} type='email' id='usuario' label='Endereço de e-mail' placeholder='Insira o seu endereço de e-mail.' variant='outlined' name='usuario' margin='normal' required fullWidth />
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' placeholder='Mínimo de 8 caracteres.' variant='outlined' name='senha' margin='normal' type='password' required fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar senha' placeholder='Digite a senha novamente para confirmação.' variant='outlined' name='confirmPassword'margin='normal' type='password' required fullWidth />
-                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="foto" label="Foto do usuário" placeholder='Insira o link da sua imagem de preferência.' name="foto" variant="outlined" margin="normal" fullWidth />
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="foto" label="Foto do usuário" placeholder='Insira o link da sua imagem de preferência. (Opcional)' name="foto" variant="outlined" margin="normal" fullWidth />
 
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>

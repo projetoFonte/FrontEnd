@@ -3,16 +3,16 @@
 }
 
 .attBtn{
-    color: #e4e4e4!important;
-    background: #3797a4!important;
+    color: #3797a4!important;
+    background: #e4e4e4!important;
     font-weight: bold!important;
     border-radius: 10px!important;
 }
 
 .attBtn:hover,
 .attBtn:focus{
-    color: #3797a4!important;
-    background: #e4e4e4!important;
+    color: #e4e4e4!important;
+    background: #3797a4!important;
     font-weight: bold!important;
     border-radius: 10px!important;
 }

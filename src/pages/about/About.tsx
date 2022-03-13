@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Grid, Box, Typography } from "@material-ui/core";
 import './About.css';
+import GitHub from '@material-ui/icons/GitHub';
+import LinkedIn from '@material-ui/icons/LinkedIn';
 import { useSelector } from "react-redux";
 import { UserState } from '../../store/tokens/userReducer';
 import { useHistory } from "react-router-dom";
@@ -38,60 +40,89 @@ function About() {
 
                        
                         <Box flexDirection="column" display="flex" justifyContent="center" alignItems="center">
-                            <Typography className="sobre bold textColor padding" variant="h4" gutterBottom color="textPrimary" component="h4" align="center" >
+                            <Typography className="font sobre bold textColor" variant="h4" gutterBottom color="textPrimary" component="h4" align="center" >
                                 SOBRE NÓS
                             </Typography>
 
                             <Box display="flex" justifyContent="space-around" alignItems="center">
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'>
+                                    <Box className='mSobre' justifyContent='center'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center" >
-                                             <img src="https://media-exp1.licdn.com/dms/image/D4E35AQETss4gTW6syg/profile-framedphoto-shrink_200_200/0/1637854227106?e=1647090000&v=beta&t=vJaQkOAyMIz-SiN81hO6yLgfhbYdeG1XBVwPH1RYR8s" alt="Karen" className="bio"/>
+                                             <img src="https://i.imgur.com/jBveTjX.jpg" alt="Foto de Karen" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio">
-                                            <a href="https://www.linkedin.com/in/karen-gabrieli-viana/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                                 Karen Gabrieli
-                                            </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/karen-gabrieli-viana/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/karengabiviana" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom>
                                             <i>A Comunicadora</i>
                                         </Typography>
                                         <Typography className="textBio">
-                                            A mais velha, tem a vida organizada no <i>Notion</i>, Enérgica e dona de uma mente criativa e gráfica.
+                                            A mais velha, tem a vida organizada no <i>Notion</i>, enérgica e dona de uma mente criativa e gráfica.
                                         </Typography>
-
                                     </Box>
                                 </Grid>
 
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'>
+                                    <Box className='mSobre'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center">
-                                            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF6rlcg6vclZA/profile-displayphoto-shrink_200_200/0/1607049610692?e=1652313600&v=beta&t=n_l0rOxzYqma_Ryj_WW9caowNeTSSbw8yJHhX6cpATw" alt="" className="bio"/>
+                                            <img src="https://i.imgur.com/eYrbxYs.jpg" alt="Foto da Natalia" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio">
-                                        <a href="https://www.linkedin.com/in/natalia-ferreira-duque/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                             Natalia F Duque
-                                        </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/natalia-ferreira-duque/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/naaduque" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom>
                                             <i>A Detalhista</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                            Da geração Z, Conciliadora, atenta aos detalhes e sempre querendo aprender.
+                                            Da geração Z, conciliadora, atenta aos detalhes e sempre querendo aprender.
                                         </Typography>
                                     </Box>
                                 </Grid>
 
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'>
+                                    <Box className='mSobre'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center">
-                                            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFSoJZAXSWlvA/profile-displayphoto-shrink_200_200/0/1646845220008?e=1652313600&v=beta&t=33I_EccaM67c1HwFT59yelTSbbJVHc78KMuStbvOHcY" alt="" className="bio" />
+                                            <img src="https://i.imgur.com/PRG2drH.jpg" alt="Foto do Gabriel" className="bio" />
                                         </Box>
                                         <Typography className="tituloBio">
-                                        <a href="https://www.linkedin.com/in/gabriel-maia-21a725205/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                             Gabriel Maia
-                                        </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/gabriel-maia-21a725205/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/ggabrielmaia" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom>
                                             <i>O Observador</i>
                                         </Typography>
@@ -102,17 +133,27 @@ function About() {
                                 </Grid>
                             </Box>
 
-                            <Box display="flex" justifyContent="space-between">
+                            <Box display="flex" justifyContent="space-around">
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'> 
+                                    <Box className='mSobre'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center">
-                                            <img src=" https://media-exp1.licdn.com/dms/image/C4E03AQFV3duPNF8f3Q/profile-displayphoto-shrink_200_200/0/1645064988888?e=1652313600&v=beta&t=DR5M5tO4sKZvonaTyzNijVldIEjJoYgtwhh0divcFLo" alt="" className="bio"/>
+                                            <img src="https://i.imgur.com/GhtGqts.jpg" alt="Foto do William" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio">
-                                        <a href="https://www.linkedin.com/in/williamrsh/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                             William Santos
-                                        </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/williamrsh/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/Williamrsh" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom>
                                             <i>O Professor</i>
                                         </Typography>
@@ -123,15 +164,25 @@ function About() {
                                 </Grid>
 
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'>
+                                    <Box className='mSobre'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center">
-                                            <img src="//media-exp1.licdn.com/dms/image/C4E03AQHjSV2sfqVRQw/profile-displayphoto-shrink_200_200/0/1644242914800?e=1652313600&v=beta&t=QZOwKktiJRxFoSkBOPQU_53-nE99R3TwR2QwPRYyJOY" alt="" className="bio"/>
+                                            <img src="https://i.imgur.com/ci9Fngb.jpg" alt="Foto do Levi" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio" >
-                                        <a href="https://www.linkedin.com/in/levmn/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                             Levi Magni
-                                        </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/levmn/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/levmn" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom>
                                             <i>O Proativo</i>
                                         </Typography>
@@ -142,15 +193,25 @@ function About() {
                                 </Grid> 
 
                                 <Grid item md={3} xs={10} >
-                                    <Box className='padding'>
+                                    <Box className='mSobre'>
+                                    <div id="mouse">
                                         <Box display="flex" justifyContent="center" >
-                                            <img src="//media-exp1.licdn.com/dms/image/C4E03AQE4OR1c2rmNLw/profile-displayphoto-shrink_200_200/0/1641927713221?e=1652313600&v=beta&t=lQ1RI8K024jrcdFCHUV7O3l_uKt3Bk_dTnpdnU6azSc" alt="" className="bio"/>
+                                            <img src="https://i.imgur.com/J9p2Bbm.jpg" alt="Foto do Lucas" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio" >
-                                        <a href="https://www.linkedin.com/in/lucas-braga-25b250205/" target="_blank" rel="noreferrer" className='text-decorator-none'>
                                             Lucas Braga
-                                        </a>
                                         </Typography>
+                                        <div id="show">
+                                            <Box display="flex" alignItems="center" justifyContent="center">
+                                                <a href="https://www.linkedin.com/in/lucas-braga-25b250205/" target="_blank" rel="noreferrer">
+                                                    <LinkedIn className='pIcon' style={{ fontSize: 30, color: "#8ccbbe" }}/>
+                                                </a>
+                                                <a href="https://github.com/LucasBraga03" target="_blank" rel="noreferrer">
+                                                    <GitHub className='pIcon' style={{ fontSize: 25, color: "#8ccbbe" }}/>
+                                                </a>
+                                            </Box>
+                                        </div>
+                                    </div>
                                         <Typography className="subtituloBio" gutterBottom >
                                             <i>O Agitado</i>
                                         </Typography>

@@ -141,12 +141,12 @@ function CreatePost() {
         <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça uma postagem!</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="imagem" label="Imagem" name="imagem" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" placeholder="Insira um título para o seu post." variant="outlined" name="titulo" margin="normal" required fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto"  placeholder="Insira um texto de até 1000 caracteres." name="texto" variant="outlined" margin="normal" required fullWidth />
+                <TextField value={postagem.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="imagem" label="Imagem" placeholder="Ilustre seu post com uma imagem. (Opcional)" name="imagem" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label" required>Tema</InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
@@ -161,7 +161,7 @@ function CreatePost() {
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha uma categoria para a postagem.</FormHelperText>
+                    <FormHelperText>Escolha um tema para a sua postagem.</FormHelperText>
                     <Button type="submit" variant="contained" className='postBtn'>
                         Finalizar
                     </Button>

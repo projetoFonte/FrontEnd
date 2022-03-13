@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import {Grid, Box, Typography, Button} from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import PostTab from '../../components/posts/posttab/PostTab';
-import ModalPost from '../../components/posts/modalpost/ModalPost';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { UserState } from '../../store/tokens/userReducer';
@@ -40,19 +39,9 @@ function Home(){
             <Grid item xs={12} className='imgBg'></Grid>
             </Box>
           </Grid>
-
-          {/* <Box marginRight={30}>
-              <ModalPost />  
-          </Box> */}
-
-          {/* <Box>
-            <Button variant="outlined" className='homeBtn'>Criar post</Button>
-          </Box> */}
-
           <Grid xs={12} className='postagens'>
             <PostTab />
           </Grid>
-
         </Grid>
         </>
     )
