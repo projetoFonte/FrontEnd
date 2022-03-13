@@ -69,7 +69,7 @@ function About() {
                                             <i>A Comunicadora</i>
                                         </Typography>
                                         <Typography className="textBio">
-                                            A mais velha, tem a vida organizada no <i>Notion</i>, enérgica e dona de uma mente criativa e gráfica.
+                                        Com a vida organizada no <i>Notion</i>, enérgica e dona de uma mente criativa e gráfica. Apaixonada e curiosa por pessoas, culturas e idiomas.
                                         </Typography>
                                     </Box>
                                 </Grid>
@@ -216,7 +216,7 @@ function About() {
                                             <i>O Agitado</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                        O amante de Peaky Blinders, sempre frio e calculista.
+                                        O amante de <i>Peaky Blinders</i>, sempre frio e calculista.
                                         </Typography>
                                     </Box>
                                 </Grid> 
