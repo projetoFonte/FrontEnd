@@ -32,7 +32,7 @@ function PostTab() {
 
               <Box display="block" alignItems="flex-end" >
               <Typography paragraph gutterBottom variant="subtitle1" color="textPrimary" className="font breakLines">
-              Somos uma plataforma informativa que gera visibilidade e engajamento para apoiar o <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'>Objetivo de Desenvolvimento Social  número 6</a>, água potável e saneamento básico,  que é uma iniciativa da ONU. Somos a fonte de incentivo para que corporações se comprometam com a construção de um mundo melhor para todes!
+              Somos uma plataforma informativa que gera visibilidade e engajamento social para apoiar o <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'>Objetivo de Desenvolvimento Sustentável de número 6</a>, água potável e saneamento básico, que é uma iniciativa da ONU. Somos a fonte de incentivo para que corporações se comprometam com a construção de um mundo melhor para todes!
               <Typography align="right">
               <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'> Saiba mais</a>
               </Typography>
