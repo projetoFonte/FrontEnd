@@ -7,6 +7,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify';
 import { UserState } from '../../../store/tokens/userReducer';
 import { useSelector } from 'react-redux';
+import User from '../../../models/User';
 import './CreatePost.css';
 
 function CreatePost() {
@@ -16,6 +17,9 @@ function CreatePost() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
+      const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -47,7 +51,15 @@ function CreatePost() {
         texto: '',
         imagem: '',
         dataDePostagem: '',
-        tema: null
+        tema: null,
+        usuario: null
+    })
+    const [user, setUser] = useState<User>({
+        id: +userId,   
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => { 
@@ -85,7 +97,8 @@ function CreatePost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario:user
         })
 
     }

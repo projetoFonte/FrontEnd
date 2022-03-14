@@ -127,11 +127,11 @@ function PostList() {
                 <Card>
                   <CardHeader
                     avatar={
-                      <Avatar src={ user.foto }  alt={ user.nome }>
+                      <Avatar src={ post.usuario?.foto }  alt={ post.usuario?.nome }>
                       </Avatar>
                     }
-                    title={ user.nome }//{user.nome} buscar do cadastro usuário
-                    subheader={post.dataDePostagem} // verificar como buscar do back
+                    title={ post.usuario?.nome }
+                    subheader={post.dataDePostagem} 
                   />
 
                   <CardMedia
