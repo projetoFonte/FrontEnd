@@ -78,7 +78,7 @@ function About() {
                                     <Box className='mSobre'>
                                     <div id="mouse">
                                         <Box display="flex" justifyContent="center">
-                                            <img src="https://i.imgur.com/eYrbxYs.jpg" alt="Foto da Natalia" className="bio"/>
+                                            <img src="https://i.imgur.com/O5QnRke.png" alt="Foto da Natalia" className="bio"/>
                                         </Box>
                                         <Typography className="tituloBio">
                                             Natalia F Duque
@@ -98,7 +98,7 @@ function About() {
                                             <i>A Detalhista</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                            Da geração Z, conciliadora, atenta aos detalhes e sempre querendo aprender.
+                                            Conciliadora, ama animais, jogos e documentários. Sempre atenta aos detalhes e querendo aprender cada vez mais.
                                         </Typography>
                                     </Box>
                                 </Grid>
@@ -127,7 +127,7 @@ function About() {
                                             <i>O Observador</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                            O mais novo, determinado e disposto a resolver qualquer problema, facilidade com Back-end.
+                                            O mais novo, determinado e disposto a resolver qualquer problema, afinidade com Back-end.
                                         </Typography>
                                     </Box>
                                 </Grid>
@@ -158,7 +158,7 @@ function About() {
                                             <i>O Professor</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                        Apaixonado por tecnologia, motivado por desafios e sempre disponível quando alguém precisa de ajuda.
+                                            Apaixonado por tecnologia, motivado por desafios e sempre disponível quando alguém precisa de ajuda.
                                         </Typography>
                                     </Box>
                                 </Grid>
@@ -187,7 +187,7 @@ function About() {
                                             <i>O Proativo</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                            Nascido um ano após o bug do milênio, naturalmente curioso, apaixonado por artes e tecnologia.
+                                            Nascido um ano após o bug do milênio, naturalmente curioso, apaixonado por artes e tecnologia, obstinado em unir essas áreas.
                                         </Typography>
                                     </Box>
                                 </Grid> 
@@ -216,7 +216,7 @@ function About() {
                                             <i>O Agitado</i>
                                         </Typography>
                                         <Typography className="textBio" >
-                                        O amante de <i>Peaky Blinders</i>, sempre frio e calculista.
+                                        O amante de <i>Peaky Blinders</i>, frio e calculista. Sempre tentando deixar o clima do grupo mais leve e disposto a ajudar.
                                         </Typography>
                                     </Box>
                                 </Grid> 

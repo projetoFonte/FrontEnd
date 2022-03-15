@@ -25,3 +25,11 @@
 .bold{
     font-weight: bold!important;
 }
+
+.pLeft{
+    padding-left: 50px;
+}
+
+.pRight{
+    padding-right: 50px;
+}

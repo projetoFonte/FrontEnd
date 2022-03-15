@@ -9,12 +9,9 @@ function Footer() {
     <>
       <Grid container direction="row" justifyContent="center" alignItems="center" className="footerBg">
         <Grid alignItems="center" item xs={12}>
-          <Box className="box">
-            <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-              <Typography variant="h6" align="center" gutterBottom className='redes'>Siga o projeto e entre em contato com a gente!</Typography>
-            </Box>
+          <Box display="flex" flexDirection="row" justifyContent="space-between" className="box" >
             
-            <Box display="flex" alignItems="center" justifyContent="center">
+            <Box display="flex" alignItems="center" justifyContent="center" className='pLeft'>
                 <a href="https://github.com/projetoFonte" target="_blank" rel="noreferrer">
                      <GitHub style={{ fontSize: 30, color: "white" }}/>
                 </a>
@@ -23,9 +20,8 @@ function Footer() {
                     <Mail style={{ fontSize: 30, color: "white" }}/>
                 </a>              
             </Box>
-          </Box>
-          
-          <Box className='box1'>
+
+            <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" className='pRight'>
             <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
               <Typography variant="subtitle2" align="center" gutterBottom className='redes'>© 2022 Copyright</Typography>
             </Box>
@@ -35,6 +31,10 @@ function Footer() {
               </a>
             </Box>
           </Box>
+
+          </Box>
+          
+         
         </Grid>
       </Grid>
     </>

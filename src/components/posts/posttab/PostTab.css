@@ -28,9 +28,9 @@
     color: #3797a4;
 }
 
-/* .subtitle2{
-    padding-left: 100px;
-} */
+.subtitle2{
+    padding-right: 50px!important;
+}
 
 .breakLines{
     inline-size: 25em;

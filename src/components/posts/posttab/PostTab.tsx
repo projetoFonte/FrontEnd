@@ -31,15 +31,15 @@ function PostTab() {
               </Box> 
 
               <Box display="block" alignItems="flex-end" >
-              <Typography paragraph gutterBottom variant="subtitle1" color="textPrimary" className="font breakLines">
-              Somos uma plataforma informativa que gera visibilidade e engajamento social para apoiar o <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'>Objetivo de Desenvolvimento Sustentável de número 6</a>, água potável e saneamento básico, que é uma iniciativa da ONU. Somos a fonte de incentivo para que corporações se comprometam com a construção de um mundo melhor para todes!
+              <Typography paragraph gutterBottom variant="subtitle1" color="textPrimary" className="font breakLines textWeight">
+              Somos uma plataforma informativa que gera visibilidade e engajamento social para apoiar o <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'>Objetivo de Desenvolvimento Sustentável 6</a> da ONU, água potável e saneamento básico. Temos como objetivo ser a fonte de incentivo para que corporações se comprometam com a construção de um mundo melhor para todes.
               <Typography align="right">
               <a href="https://brasil.un.org/pt-br/sdgs/6" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'> Saiba mais</a>
               </Typography>
               </Typography>
               </Box>
               
-              <Box display="block" alignItems="flex-end" className='font textFonte'>
+              <Box display="block" alignItems="center" className='font textFonte subtitle2'>
                 <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='textMini textWeight'> 
                   A água é nossa fonte.
                 </Typography>
@@ -72,6 +72,9 @@ function PostTab() {
                 <p>Visando os princípios universais do <a href="https://www.pactoglobal.org.br/" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'>Pacto Global</a>, nosso objetivo é captar organizações interessadas em impactar gerações futuras e fazer
                   a diferença, criando alertas para aumentar a visibilidade para essa questão.
                   A água é nossa fonte e ela não pode cessar.</p>
+                <Typography align="right">
+                  <a href="https://www.pactoglobal.org.br/" target="_blank" rel="noreferrer" color="textPrimary" className='texto1 titulo text-decorator-none'> Saiba mais</a>
+                </Typography>
               </Typography>
             </Box>
           </Box>
